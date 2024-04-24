@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta  name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Background color</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+       <style>
+        .navbar,a{
+            color: white !important;
+        }
+        table tr th,td{
+          padding: 10px;
+         font-weight: 600;
+          
+        }
+        
+        table{
+          text-align: center;
+          margin: auto;
+          margin-top: 20px;
+          border-radius: 30px;
+        }
+
+        
+        
+       </style>
+       <script>
+
+          
+        
+
+
+            function changeBackground() {
+    var checkbox = document.getElementById("Theme");
+    var body = document.body;
+    if (checkbox.checked) {
+        body.style.backgroundColor = "#353938";
+        body.style.color="white";
+    } else {
+        body.style.backgroundColor = "white";
+        body.style.color="black";
+    }
+
+
+
+
+}
+
+  function validation(){
+    var name=document.forms.myform.name.value;
+    var roll=document.forms.myform.Rollno.value
+    var father=document.forms.myform.Fathername.value;
+    var age=document.forms.myform.age.value;
+    var DOB=document.forms.myform.dob.value;
+    var gender=document.forms.myform.gender.value;
+    var mobile=document.forms.myform.mobile.value;
+    var color=document.forms.myform.color.value;
+    var address=document.forms.myform.address.value;
+    console.log(name,roll,father,age,DOB,gender,mobile,color,address)
+    if(name=="" || name.includes("0")||  name.includes("1")
+    || name.includes("2")||  name.includes("3")
+    || name.includes("4")||  name.includes("5")
+    || name.includes("6")||  name.includes("7")
+    || name.includes("8")||  name.includes("9")
+    || name.includes(",")||  name.includes(".")
+    || name.includes("/")||  name.includes("'")
+    
+  ){
+    alert("Enter valid name");
+     
+    return false;
+  }
+  if(roll=="" || roll=="+"|| roll=="-"
+          || roll=="*" || roll=="/"){
+                alert("Your roll number should not be empty");
+                return false;
+              }
+   if(father=="" || father.includes("2")||  father.includes("3")
+    || father.includes("4")||  father.includes("5")
+    || father.includes("6")||  father.includes("7")
+    || father.includes("8")||  father.includes("9")
+    || father.includes(",")||  father.includes("1")
+    || father.includes("/")||  father.includes("'")){
+      alert("Your father name should not be empty")
+      return false;
+    }
+    if(age<5 || age>40|| age==""){
+      alert("Enter your correct age");
+      return false;
+      
+    }
+    if(DOB==""){
+      alert(" Enter your DOB")
+      return false;
+    }
+    if(mobile.length<=10){
+      alert("Enter valid phone number");
+      return false;
+    }
+   
+  }
+ 
+
+        </script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg bg-dark ">
+            <div class="container-fluid ">
+              <a class="navbar-brand" href="#">vTs</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link " aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                  </li>
+                 
+                 
+                </ul>
+               
+                <div class="form-check form-switch me-2 ">
+                
+                  <label class="form-check-label" for="Theme">Light /</label>
+
+                    <input class="form-check-input" type="checkbox" role="switch" id="Theme" onclick="changeBackground()" >
+                    
+                    <label class="form-check-label" for="Theme">Dark</label>
+                  </div>
+                  </nav>
+              </div>
+            </div>
+            
+       <section class="form">
+        <table border="2">
+        <form action="success.html" name="myform"  onsubmit=" return validation()" >
+         <tr> 
+          <th>
+            <label for="name">Name:</label></th>
+            <td><input type="text" name="name" value=""><br></td>
+          </tr>
+          <tr>
+            
+            <th><label for="Rollno">Roll No:</label></th>
+          <td>
+
+          <input type="number" name="Rollno" value=""><br></td>
+        </tr>
+        <tr>
+           <th><label for="Fathername">Father's name:</label></th> 
+            <td><input type="text" name="Fathername" value=""><br></td>
+          </tr>
+          <tr>
+           <th><label for="age">Age:</label>></th>
+         <td> <input type="number" name="age" value=""><br></td>
+        </tr>
+        <th><label for="dob">DOB:</label>></th>
+        <td> <input type="date" name="dob" value=""><br></td>
+       </tr>
+        <tr>
+          <th><label for="Gender">Gender:</label></th>
+         <td> <input type="radio" name="gender">
+          <label for="Gender" name="Gender">Male</label>
+          <input type="radio" name="gender" value="">
+          <label for="Gender" name="Gender">Female</label>
+          <input type="radio" name="gender" value="">
+          <label for="Gender" name="Gender" >Transgender</label><br></td>
+        </tr>
+        <tr>
+          <th><label for="mobile">Mobile NO:</label></th>
+          <td> <input type="tel" name="mobile" value=""><br></td>
+        </tr>
+        <tr>
+          <th><label for="color" id="color">Favorite color:</label></th>
+          <td> <input type="color" name="color" value="" id="color" ><br></td>
+        </tr>
+        <tr>
+          <th><label for="address">Adderss:</label></th>
+        <td> <textarea name="address" id="address" cols="40" rows="2" ></textarea><br></td>
+        </tr>
+        <tr>
+        <td><button type="submit">Submit</button></td> 
+        </tr>
+        </form>
+      </table>
+       </section>
+    </body>
+</html>
