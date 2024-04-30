@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Color</title>
+    <style>
+        div {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        button:hover{
+            background-color: aqua;
+            animation: button 2s infinite linear;
+            
+
+            
+        }
+        @keyframes button{
+            from{
+                background-color: aqua;
+            }to
+            {
+                background-color: crimson;
+            }
+        }
+
+
+    </style>
+    <script>
+        var colors=["#cc00ff " , "#00ffff" , "#ffbf00" , "#00ff00","black"];
+        var change=0;
+        function color(){
+            change++;
+            if(change >= colors.length){
+              change=0;
+            }
+            document.body.style.backgroundColor=colors[change];
+        }
+
+        
+    </script>
+</head>
+<body>
+    <div>
+    <button  onclick="color()" >click</button>
+    </div>
+</body>
+</html>
